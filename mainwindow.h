@@ -17,7 +17,20 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    void displayInfo();
+    void openEditor(QString fileName);
+
+protected:
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dropEvent(QDropEvent* event);
+    void dragMoveEvent(QDragEnterEvent *event);
+
+
 };
 #endif // MAINWINDOW_H
