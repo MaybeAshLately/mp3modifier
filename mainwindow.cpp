@@ -4,6 +4,7 @@
 #include <QDragEnterEvent>
 #include <QDialog>
 #include <QVBoxLayout>
+#include "modify.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -78,5 +79,18 @@ void MainWindow::displayInfo()
 
 void MainWindow::openEditor(QString fileName)
 {
+    Modify* m;
+    m= new Modify(this);
+    m->setStyleSheet("background-color: #A0A0A0;");
+    m->setWindowTitle("Edit");
+    m->setFixedSize(800,600);
 
+    connect(m, &Modify::finished, this, &MainWindow::subclassFinished);
+    this->hide();
+    m->show();
+}
+
+void MainWindow::subclassFinished()
+{
+    this->show();
 }

@@ -26,6 +26,8 @@ private:
     void displayInfo();
     void openEditor(QString fileName);
 
+    void subclassFinished();
+
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
     void dropEvent(QDropEvent* event);
