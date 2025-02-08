@@ -12,7 +12,7 @@ class Modify : public QDialog
     Q_OBJECT
 
 public:
-    explicit Modify(QWidget *parent = nullptr);
+    explicit Modify(QWidget *parent = nullptr, QString currentFileName="");
     ~Modify();
 
 private slots:
@@ -24,6 +24,14 @@ private:
     Ui::Modify *ui;
     void closeEvent(QCloseEvent *event);
     bool goBackToMain;
+    void getMetadata();
+    void setNewData();
+
+    const QString fileName;
+
+    QString newSongName;
+    QString newArtistName;
+    QString newAlbumName;
 };
 
 #endif // MODIFY_H

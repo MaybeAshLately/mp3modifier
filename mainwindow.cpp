@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 #include "modify.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -79,8 +80,9 @@ void MainWindow::displayInfo()
 
 void MainWindow::openEditor(QString fileName)
 {
+
     Modify* m;
-    m= new Modify(this);
+    m= new Modify(this, fileName);
     m->setStyleSheet("background-color: #A0A0A0;");
     m->setWindowTitle("Edit");
     m->setFixedSize(800,600);
