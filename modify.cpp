@@ -14,6 +14,7 @@ Modify::Modify(QWidget *parent, QString currentFileName)
 
     ui->cancelButton->setStyleSheet("background-color: #FF0000;");
     ui->saveButton->setStyleSheet("background-color: #00BA0C;");
+    ui->otherDataButton->setChecked(true);
 
     getMetadata();
 }
@@ -70,9 +71,17 @@ void Modify::setNewData()
         f.tag()->setTitle(newSongName.toStdString());
         f.tag()->setArtist(newArtistName.toStdString());
         f.tag()->setAlbum(newAlbumName.toStdString());
+        if(ui->otherDataButton->isChecked())
+        {
+            f.tag()->setComment("");
+            f.tag()->setGenre("");
+            f.tag()->setTrack(0);
+            f.tag()->setYear(0);
+        }
         f.save();
     }
 }
+
 
 void Modify::closeEvent(QCloseEvent *event)
 {
