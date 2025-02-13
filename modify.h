@@ -26,12 +26,21 @@ private:
     bool goBackToMain;
     void getMetadata();
     void setNewData();
+    void displayInfo();
 
     const QString fileName;
 
     QString newSongName;
     QString newArtistName;
     QString newAlbumName;
+
+    QString newCoverPath;
+
+
+protected:
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dropEvent(QDropEvent* event);
+    void dragMoveEvent(QDragEnterEvent *event);
 };
 
 #endif // MODIFY_H
