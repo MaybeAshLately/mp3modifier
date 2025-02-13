@@ -27,6 +27,8 @@ Modify::Modify(QWidget *parent, QString currentFileName)
     ui->saveButton->setStyleSheet("background-color: #00BA0C;");
     ui->otherDataButton->setChecked(true);
 
+    ui->pathToFileText->setText(currentFileName);
+
     getMetadata();
 }
 

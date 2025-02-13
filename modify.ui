@@ -209,6 +209,19 @@
     <string>Clear other metadata</string>
    </property>
   </widget>
+  <widget class="QLabel" name="pathToFileText">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>0</y>
+     <width>531</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>pathToFile</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
